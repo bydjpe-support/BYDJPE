@@ -3,7 +3,129 @@
 Welcome to BYDJ PE. For more information, please visit our official website.
 https://bydjpe.winos.me/en/
 
-为 Arm 设备提供持续维护的 Windows PE 环境。
+A continuously maintained and stable Windows PE environment for Arm devices.
+
+Currently maintained versions: **V0.0.1** · **V3.0.1** · **V4.0.1**
+
+## About
+
+BYDJ PE is a Windows PE maintenance environment for Arm devices. It integrates tools for system maintenance, installation and deployment, troubleshooting, repair and device support, and is continuously maintained by the most professional PE team in the world.
+
+- Keeps Windows core files and registry configuration close to the original, and ships with a rich set of maintenance tools. Retaining more components also requires more memory.
+- System files are transparent and unencrypted. There are no ads, paid features, promotional bundles or unapproved changes to browser settings.
+- This is a non-profit project, maintained independently by its maintenance team. Donations are not accepted at this time.
+
+**About the name**: PE now supports both Chinese and English, so the "CN" prefix (indicating Chinese) was dropped from the original name CNBYDJ PE. The Chinese name, 筑梦顶针 (Zhu Meng Ding Zhen), remains unchanged. BYDJ is short for BYDDJ, which comes from "Build Your Dream Ding Zhen".
+
+## Current Releases
+
+| Version | Windows Kernel | Updated |
+| --- | --- | --- |
+| V0.0.1 | Windows 10 22H2 · 19045.3803 | 2026.09.20 |
+| V3.0.1 | Windows 11 24H2 · 26100.1742 | 2026.09.20 |
+| V4.0.1 | Windows 11 26H1 · 28000.1450 | 2026.09.20 |
+
+All three kernels are maintained in parallel.
+
+## Features
+
+- **System tools**: Tools for maintenance, installation and deployment, troubleshooting and repair.
+- **Bilingual**: Supports both Chinese and English.
+- **Wireless**: Supports Wi-Fi and Bluetooth.
+- **Application emulation**:
+  - V0.0.1: Supports x86 application emulation. x64 emulation is not provided.
+  - V3.0.1 / V4.0.1: Support both x86 and x64 application emulation.
+  - Applications must still meet their own dependency requirements. Application emulation is not the same as cross-architecture driver support; drivers must match the PE architecture and the device.
+- **Remote Desktop**: Supports two-way connections. Other devices can connect to the PE desktop, and the PE can also act as a client to connect to other devices. Suitable network configuration and access permissions are required.
+- **Auto-rotation**: All three current releases automatically detect and adjust screen orientation after boot, provided the device driver supplies usable orientation information.
+- **PE writer**: Uses the open-source Fengniao PE writer.
+
+## Device Compatibility
+
+### Prerequisites
+
+The target device must already have full Windows boot support, provided either officially or by a third party, and must match the selected PE's CPU architecture, kernel version, firmware and drivers. Full Windows boot support is a prerequisite for adaptation, and each combination of PE version and device still needs to be verified.
+
+Known compatible platform types:
+
+- Snapdragon devices with boot support for the corresponding Windows version
+- Apple M-series virtual machine environments that support Windows on Arm
+- Raspberry Pi models with full Windows boot support
+- NVIDIA DGX Spark (use a boot solution and drivers that match the selected PE version)
+
+### Version Recommendations
+
+| Device | Recommended Version |
+| --- | --- |
+| Devices older than Snapdragon 850 | V0.0.1 |
+| Snapdragon 850 to Snapdragon X Elite | V0.0.1, V3.0.1 or V4.0.1 |
+| Snapdragon X Elite | V3.0.1 or V4.0.1 |
+| Snapdragon X2 Elite | V4.0.1 |
+
+- For devices older than Snapdragon 8cx Gen 2, try V0.0.1 if you need to investigate compatibility further.
+- Choose a version based on the device's Windows boot solution and drivers.
+- If you get a blue screen at boot, first troubleshoot with an image that has no nonessential drivers added, then add drivers that match the device model.
+
+### China-Developed Platforms
+
+Information about running BYDJ PE on devices with China-developed CPUs is provided only as runtime feedback from enthusiast users, for reference. Running in a virtual machine and booting directly on physical hardware are different environments. The device model, PE version, boot method and driver configuration must be verified separately.
+
+### Windows Versions and Hardware Requirements
+
+Different Windows versions support CPU instruction sets and hardware features to different degrees. Some older Windows versions may fail to boot on newer processors because of mismatched processor platform, firmware or driver support, and some older Windows versions may need further adaptation on newer platforms such as the latest Snapdragon chips. Boot results must be evaluated together with the Windows version, kernel, instruction set, firmware and drivers. The boot behavior alone cannot identify the cause.
+
+## Installation and Usage
+
+### Installing into an Existing Windows Boot Environment
+
+If the device already has a supported Windows boot environment and meets the installer's requirements, we recommend using the project's installer first to install PE on the target device and then running it. This improves compatibility with the deployment and boot process.
+
+- Use the project's installer both to install and to uninstall PE.
+- The installer still requires a matching CPU architecture, kernel version and device drivers.
+- The current installer can only install PE into an existing Windows boot environment and uninstall it. It does **not** yet support creating USB boot media or generating ISO files.
+- The ISO released by the project is a separate image file, available on the download page.
+- Some antivirus software may flag the installer. Verify the package source and checksum before following the installation instructions.
+
+### If the ISO Does Not Boot Directly
+
+ISO boot results depend on the hardware platform, CPU instruction set, boot method, drivers and other conditions. Even an official Microsoft Windows ISO may be limited on some devices. An ISO that does not boot does not necessarily mean there is a problem with the PE or its system files. Please work through the following:
+
+1. Verify the file checksum.
+2. Confirm that the Windows version, CPU architecture, boot method and drivers match the device.
+3. If the device can already run a supported Windows, use the project's installer instead.
+
+## Feedback and Support
+
+- **Email**: bydjpe.support@gmail.com
+- **Third-party QQ group**: 687617870. This group is run independently by a third party. The project's maintenance team does not manage it, and discussions in the group do not represent official statements. For project support, please send an email.
+
+When reporting an issue, please describe it in this order: device model → CPU → PE version → boot method → exact message or behavior. Do not expose passwords, keys or other sensitive information in screenshots.
+
+## FAQ
+
+**Does BYDJ PE include any additional promotional software?**
+Officially released BYDJ PE contains no promotional bundles. Please download from trusted sources and verify the checksum against the file name, version and format. Files from other sources need to be checked separately.
+
+**Is PE also published on other forums?**
+After each update, PE is published first on PCBeta (远景论坛), then on Coolapk (酷安) and the Youtan community (柚坛社区), three platforms in total. Please confirm the source of images on other download sites or cloud drives. If a checksum does not match the official one, first check the version and file format, then download the file again.
+
+## Modified Versions and Authorization
+
+- Please obtain project authorization before publicly releasing a modified version of BYDJ PE. Modifications may be used for internal testing; public distribution must meet the authorization requirements.
+- If you confirm that your image is a modified version released publicly without authorization, stop using it, delete it, and download from the project's official release channels instead.
+- Currently authorized modder: YLX (one in total). To request authorization, please contact us through the feedback channels.
+
+## Notes and Disclaimer
+
+- Back up important data and your boot configuration before installing. If boot problems occur, troubleshoot using the device model, PE version, boot method and driver information, and feel free to contact the maintenance team.
+- Before using an unfamiliar tool, read its documentation or seek professional help. Make sure you understand the steps and their effects before installing, maintaining or repairing anything, and take responsibility for your own actions and their results.
+- For official Microsoft installation media, please download from Microsoft's official website.
+- Copyright of the third-party materials and components referenced in this project belongs to their respective owners. Please use them under their own license terms. Windows usage and licensing are governed by the applicable Microsoft license terms.
+
+
+**以下是中文版介绍：**
+
+为 Arm 设备提供持续维护并且稳定的 Windows PE 环境。
 
 当前维护版本：**V0.0.1** · **V3.0.1** · **V4.0.1**
 
@@ -58,6 +180,7 @@ BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、�
 | 设备 | 建议版本 |
 | --- | --- |
 | 骁龙 850 以前的设备 | V0.0.1 |
+| 骁龙 850 至骁龙 X Elite | V0.0.1 或 V3.0.1 或 V4.0.1 |
 | 骁龙 X Elite | V3.0.1 或 V4.0.1 |
 | 骁龙 X2 Elite | V4.0.1 |
 
