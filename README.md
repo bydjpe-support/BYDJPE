@@ -123,7 +123,7 @@ After each update, PE is published first on PCBeta (远景论坛), then on Coola
 - Copyright of the third-party materials and components referenced in this project belongs to their respective owners. Please use them under their own license terms. Windows usage and licensing are governed by the applicable Microsoft license terms.
 
 
-**以下是中文版介绍：**
+## **以下是中文版介绍：**
 
 为 Arm 设备提供持续维护并且稳定的 Windows PE 环境。
 
