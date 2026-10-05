@@ -58,7 +58,7 @@ Known compatible platform types:
 | Device | Recommended Version |
 | --- | --- |
 | Devices older than Snapdragon 850 | V0.0.1 |
-| Snapdragon 850 to Snapdragon X Elite | V0.0.1, V3.0.1 or V4.0.1 |
+| Snapdragon 850 to Snapdragon 8cx gen3 | V0.0.1, V3.0.1 or V4.0.1 |
 | Snapdragon X Elite | V3.0.1 or V4.0.1 |
 | Snapdragon X2 Elite | V4.0.1 |
 
@@ -180,7 +180,7 @@ BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、�
 | 设备 | 建议版本 |
 | --- | --- |
 | 骁龙 850 以前的设备 | V0.0.1 |
-| 骁龙 850 至骁龙 X Elite | V0.0.1 或 V3.0.1 或 V4.0.1 |
+| 骁龙 850 至骁龙 8cx gen3 | V0.0.1 或 V3.0.1 或 V4.0.1 |
 | 骁龙 X Elite | V3.0.1 或 V4.0.1 |
 | 骁龙 X2 Elite | V4.0.1 |
 
