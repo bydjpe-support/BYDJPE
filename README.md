@@ -5,11 +5,11 @@ https://bydjpe.winos.me/en/
 
 A continuously maintained and stable Windows PE environment for Arm devices.
 
-Currently maintained versions: **V0.0.1** · **V3.0.1** · **V4.0.1**
+Currently maintained versions: **V0.0.1** · **V1.5.0** · **V3.0.1** · **V4.0.1**
 
 ## About
 
-BYDJ PE is a Windows PE maintenance environment for Arm devices. It integrates tools for system maintenance, installation and deployment, troubleshooting, repair and device support, and is continuously maintained by the most professional PE team in the world.
+BYDJ PE is a Windows PE maintenance environment for Arm devices. It integrates tools for system maintenance, installation and deployment, troubleshooting, repair and device support, and is continuously maintained by a professional team of 10+ members.
 
 - Keeps Windows core files and registry configuration close to the original, and ships with a rich set of maintenance tools. Retaining more components also requires more memory.
 - System files are transparent and unencrypted. There are no ads, paid features, promotional bundles or unapproved changes to browser settings.
@@ -22,10 +22,11 @@ BYDJ PE is a Windows PE maintenance environment for Arm devices. It integrates t
 | Version | Windows Kernel | Updated |
 | --- | --- | --- |
 | V0.0.1 | Windows 10 22H2 · 19045.3803 | 2026.09.20 |
+| V1.5.0 | Windows 11 23H2 · 22631.2861 | 2026.10.09 |
 | V3.0.1 | Windows 11 24H2 · 26100.1742 | 2026.09.20 |
 | V4.0.1 | Windows 11 26H1 · 28000.1450 | 2026.09.20 |
 
-All three kernels are maintained in parallel.
+All four kernels are maintained in parallel.
 
 ## Features
 
@@ -34,10 +35,10 @@ All three kernels are maintained in parallel.
 - **Wireless**: Supports Wi-Fi and Bluetooth.
 - **Application emulation**:
   - V0.0.1: Supports x86 application emulation. x64 emulation is not provided.
-  - V3.0.1 / V4.0.1: Support both x86 and x64 application emulation.
+  - V1.5.0 / V3.0.1 / V4.0.1: Support both x86 and x64 application emulation.
   - Applications must still meet their own dependency requirements. Application emulation is not the same as cross-architecture driver support; drivers must match the PE architecture and the device.
 - **Remote Desktop**: Supports two-way connections. Other devices can connect to the PE desktop, and the PE can also act as a client to connect to other devices. Suitable network configuration and access permissions are required.
-- **Auto-rotation**: All three current releases automatically detect and adjust screen orientation after boot, provided the device driver supplies usable orientation information.
+- **Auto-rotation**: All four current releases automatically detect and adjust screen orientation after boot, provided the device driver supplies usable orientation information.
 - **PE writer**: Uses the open-source Fengniao PE writer.
 
 ## Device Compatibility
@@ -58,7 +59,7 @@ Known compatible platform types:
 | Device | Recommended Version |
 | --- | --- |
 | Devices older than Snapdragon 850 | V0.0.1 |
-| Snapdragon 850 to Snapdragon 8cx gen3 | V0.0.1, V3.0.1 or V4.0.1 |
+| Snapdragon 850 to Snapdragon 8cx gen3 | V0.0.1, V1.5.0, V3.0.1 or V4.0.1 |
 | Snapdragon X Elite | V3.0.1 or V4.0.1 |
 | Snapdragon X2 Elite | V4.0.1 |
 
@@ -127,11 +128,11 @@ After each update, PE is published first on PCBeta (远景论坛), then on Coola
 
 为 Arm 设备提供持续维护并且稳定的 Windows PE 环境。
 
-当前维护版本：**V0.0.1** · **V3.0.1** · **V4.0.1**
+当前维护版本：**V0.0.1** · **V1.5.0** · **V3.0.1** · **V4.0.1**
 
 ## 项目简介
 
-BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、安装部署、故障排查、修复与设备支持工具，由全世界最专业的 PE 团队持续维护。
+BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、安装部署、故障排查、修复与设备支持工具，由 10 人以上的专业团队持续维护。
 
 - 保留接近原版的 Windows 核心文件与注册表配置，并提供丰富的维护工具；保留更多组件也需要相应的内存资源。
 - 系统文件透明、未加密，不含广告、收费功能、推广捆绑或未经确认的浏览器配置变更。
@@ -144,10 +145,11 @@ BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、�
 | 版本 | Windows 内核 | 更新日期 |
 | --- | --- | --- |
 | V0.0.1 | Windows 10 22H2 · 19045.3803 | 2026.09.20 |
+| V1.5.0 | Windows 11 23H2 · 22631.2861 | 2026.10.09 |
 | V3.0.1 | Windows 11 24H2 · 26100.1742 | 2026.09.20 |
 | V4.0.1 | Windows 11 26H1 · 28000.1450 | 2026.09.20 |
 
-三个内核同步维护。
+四个内核同步维护。
 
 ## 功能特性
 
@@ -156,10 +158,10 @@ BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、�
 - **无线功能**：支持 Wi-Fi 与蓝牙。
 - **应用转译**：
   - V0.0.1：支持 x86 应用转译，不提供 x64 转译。
-  - V3.0.1 / V4.0.1：支持 x86 和 x64 应用转译。
+  - V1.5.0 / V3.0.1 / V4.0.1：支持 x86 和 x64 应用转译。
   - 应用运行仍需满足相应依赖；应用转译不等同于跨架构驱动支持，驱动需匹配 PE 架构与设备。
 - **远程桌面**：支持双向连接，既可接受其他设备连接到 PE 桌面，也可作为客户端连接其他设备。需满足相应网络配置与访问权限要求。
-- **自动旋转**：三个当前版本均支持启动后自动识别并调整屏幕方向，前提是设备驱动能提供可用的方向信息。
+- **自动旋转**：四个当前版本均支持启动后自动识别并调整屏幕方向，前提是设备驱动能提供可用的方向信息。
 - **PE 写入器**：使用蜂鸟 PE 开源写入器。
 
 ## 设备兼容性
@@ -180,7 +182,7 @@ BYDJ PE 是面向 Arm 设备的 Windows PE 维护环境，集成系统维护、�
 | 设备 | 建议版本 |
 | --- | --- |
 | 骁龙 850 以前的设备 | V0.0.1 |
-| 骁龙 850 至骁龙 8cx gen3 | V0.0.1 或 V3.0.1 或 V4.0.1 |
+| 骁龙 850 至骁龙 8cx gen3 | V0.0.1 或 V1.5.0 或 V3.0.1 或 V4.0.1 |
 | 骁龙 X Elite | V3.0.1 或 V4.0.1 |
 | 骁龙 X2 Elite | V4.0.1 |
 
