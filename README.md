@@ -2,140 +2,112 @@
 
 # BYDJ PE
 
-Welcome to BYDJ PE. For more information, please visit our official website: <https://bydjpe.winos.me/en/>
+A continuously maintained, stable Windows PE environment built for **Snapdragon, NVIDIA, and Arm** devices.
 
-A continuously maintained, stable Windows PE environment for Arm devices.
+- **Official Website**: <https://bydjpe.winos.me/en/> | [简体中文](https://bydjpe.winos.me/)
+- **Maintained Versions** (`2026.11.12`): **V0.0.3** · **V1.5.2** · **V3.0.3** · **V4.0.3** · **V4.0.3-VI**
 
-Currently maintained versions: **V0.0.2** · **V1.5.1** · **V3.0.2** · **V4.0.2**
+## About & Features
 
-## About
+BYDJ PE (*"Build Your Dream Ding Zhen"*, Chinese: **筑梦顶针**, formerly CNBYDJ PE) is a non-profit Arm Windows PE maintained by a 10+ member team. It keeps Windows core files and registry settings close to stock, transparent, and unencrypted—with no ads, paid features, bundles, or donations.
 
-BYDJ PE (Chinese name "筑梦顶针") is a Windows PE for Arm devices. It bundles tools for system maintenance, deployment and repair, and is maintained by a professional team of more than 10 people.
-
-- Keeps the Windows core files and registry configuration close to the original; system files are transparent and unencrypted.
-- No ads, paid features or bundled promotions. A non-profit project that does not currently accept donations.
-- Formerly named CNBYDJ PE; the "CN" prefix was dropped because the PE now supports both Chinese and English. BYDJ comes from "Build Your Dream Ding Zhen".
+- **Installer**: Deploy to `C:` with a boot entry, inject drivers, build ISOs, or write to USB/external drives.
+- **System & Connectivity**: Chinese/English switching, Wi-Fi, Bluetooth, audio, remote desktop, and auto screen rotation.
+- **Accessibility (`V4.0.3-VI`)**: English default, built on V4.0.3 with NVDA screen reader, dark mode, black wallpaper, inverted pointers, and system sounds.
+- **App Translation**: `V0.0.x` supports x86; all other versions support x86 & x64 (requires app runtime dependencies; does not support x86 drivers).
 
 ## Current Versions
 
-| Version | Windows kernel | Updated |
-| --- | --- | --- |
-| V0.0.2 | Windows 10 22H2 · 19045.3803 | 2026.10.30 |
-| V1.5.1 | Windows 11 23H2 · 22631.2861 | 2026.10.30 |
-| V3.0.2 | Windows 11 24H2 · 26100.1742 | 2026.10.30 |
-| V4.0.2 | Windows 11 26H1 · 28000.1450 | 2026.10.30 |
-
-The wallpaper changes with every update, so you can use it to tell versions apart.
-
-## Features
-
-- Installer: install to system, add drivers, generate ISO, write to USB drive
-- Chinese and English, Wi-Fi, Bluetooth, remote desktop, auto screen rotation
-- App translation: V0.0.x supports x86; the other versions support x86 and x64 (this does not mean cross-architecture drivers can be installed)
+| Version | Windows Kernel | Updated | Translation | Wallpaper (Version ID) |
+| --- | --- | --- | --- | --- |
+| **V0.0.3** | Win10 22H2 · 19045.3803 | 2026.11.12 | x86 | Snow mountains & autumn forest on a lake |
+| **V1.5.2** | Win11 23H2 · 22631.2861 | 2026.11.12 | x86, x64 | Floating sea otter |
+| **V3.0.3** | Win11 24H2 · 26100.1742 | 2026.11.12 | x86, x64 | Sunset waves, rocks & birds |
+| **V4.0.3** | Win11 26H1 · 28000.1450 | 2026.11.12 | x86, x64 | Coastal beach & cliffs |
+| **V4.0.3-VI** | Win11 26H1 · 28000.1450 | 2026.11.12 | x86, x64 | Solid black |
 
 ## Device Compatibility
 
-The device must already have complete Windows boot support, and it must match the selected PE's architecture, kernel, firmware and drivers.
+Devices must support native Windows boot and match the selected PE's architecture, kernel, firmware, and drivers.
 
-| Device | Recommended version |
+| Platform / CPU | Supported Versions |
 | --- | --- |
-| Before Snapdragon 850 | V0.0.2 |
-| Snapdragon 850 to 8cx gen3 | Any version |
-| Snapdragon X Elite | V3.0.2 or V4.0.2 |
-| Snapdragon X2 Elite | V4.0.2 |
+| **Older than Snapdragon 850** | **V0.0.3** or **V1.5.2** (recommended) |
+| **Snapdragon 850 – 8cx Gen 3** | **V0.0.3** – **V4.0.3-VI** |
+| **Snapdragon X Elite** | **V3.0.3** (required), **V4.0.3** / **V4.0.3-VI** (compatible) |
+| **Snapdragon X2 Elite & NVIDIA CPUs** | **V4.0.3** / **V4.0.3-VI** (required) |
+| **Apple M-series VMs** | All maintained versions (**V0.0.3** – **V4.0.3-VI**) |
 
-If you get a blue screen at boot, first test with an image that has no unnecessary drivers added, then add the matching drivers. Run reports for China-made CPUs are community feedback only, for reference.
+- **NVIDIA PCs**: Must inject required drivers before use (e.g., `nvgpio.inf.zip` for GB10 / DGX Spark).
+- **Chinese-made CPUs** (Zhaoxin, Hygon, Phytium, etc.): Must be able to boot Windows natively; real-hardware behavior varies and requires physical testing.
 
-## Installation and Use
+## Usage & Troubleshooting
 
-Only the ZIP is provided. Extract it and use the installer inside; a separate ISO is no longer offered. Before use, read the installer guide and turn off your antivirus software. Do not restart the computer or force-close the installer during an operation, or the boot configuration and PE files may be damaged.
+Only a ZIP package is provided—extract it and run the installer inside (standalone ISOs are no longer offered). Read the [website guide](https://bydjpe.winos.me/en/) first, verify checksums, and never reboot or force-close during installation.
 
-If the ISO will not boot: verify the checksum → confirm the version, architecture, boot method and drivers match the device → if the device can already run Windows, use the installer instead.
+- **VM ISO boot failure**: Email VM settings screenshots and physical machine specs.
+- **Physical USB boot failure**: Use the built-in installer instead of third-party tools like Ventoy.
+- **BSOD / freeze after driver injection**: Keep only basic drivers (storage, USB, keyboard/mouse/touchpad) and test incrementally.
 
-## Feedback and Support
+## Support, Authorization & Disclaimer
 
-- Email: bydjpe.support@gmail.com
-- Third-party QQ group: 687617870 (not run by the project; its content is not official, and for support please send an email)
-
-When reporting an issue, include: device model, CPU, PE version, boot method and the exact symptoms. Do not expose passwords or other sensitive information in screenshots.
-
-## Modifications and Authorization
-
-Obtain authorization before publicly releasing a modified version of BYDJ PE (internal testing excepted). If you find an unauthorized modified image, stop using it and get the PE from the project's official channels. Authorized modifier: YLX.
-
-## Notes and Disclaimer
-
-- Download from trusted sources and verify the checksum.
-- Back up your data before any operation, follow the instructions strictly, and take responsibility for your own actions and their results.
-- Get official Microsoft installation media from Microsoft's website. Third-party materials and components belong to their respective owners; use of Windows is governed by Microsoft's license terms.
+- **Support**: `bydjpe.support@gmail.com` (include device model, CPU, PE version, boot method, and symptoms; hide sensitive info). *Third-party QQ group `687617870` is unofficial.*
+- **Modifications**: Public redistribution of modified builds requires authorization (internal testing exempt); public videos/tutorials must credit **BYDJ PE**. Authorized modifier: **YLX**.
+- **Disclaimer**: Download from official channels, verify checksums, and back up data/boot configs before use. Official Microsoft media and Windows licensing are governed by Microsoft's terms.
 
 ---
 
 # BYDJ PE (简体中文)
 
-欢迎使用 BYDJ PE，更多信息请访问我们的官网：<https://bydjpe.winos.me/>
+为**骁龙、英伟达与 Arm** 设备提供持续维护、稳定可靠的 Windows PE 环境。
 
-为 Arm 设备提供持续维护、稳定可靠的 Windows PE 环境。
+- **官方网站**：<https://bydjpe.winos.me/> | [English](https://bydjpe.winos.me/en/)
+- **当前版本**（`2026.11.12`）：**V0.0.3** · **V1.5.2** · **V3.0.3** · **V4.0.3** · **V4.0.3-VI**
 
-当前维护版本：**V0.0.2** · **V1.5.1** · **V3.0.2** · **V4.0.2**
+## 简介与特性
 
-## 项目简介
+BYDJ PE（中文名**筑梦顶针**，原名 CNBYDJ PE，意为 *"Build Your Dream Ding Zhen"*）是由 10 人以上团队维护的非营利 Arm Windows PE。保留接近原版的系统文件与注册表，透明未加密，无广告、收费、捆绑及捐赠渠道。
 
-BYDJ PE（中文名“筑梦顶针”）是面向 Arm 设备的 Windows PE，集成系统维护、安装部署与故障修复工具，由 10 人以上的专业团队持续维护。
-
-- 保留接近原版的 Windows 核心文件与注册表配置，系统文件透明、未加密。
-- 不含广告、收费功能或推广捆绑；非营利项目，暂不接受捐赠。
-- 原名 CNBYDJ PE，因支持中英双语而去掉“CN”。BYDJ 来自 “Build Your Dream Ding Zhen”。
+- **一体化安装器**：支持安装进 `C` 盘并添加启动项、注入驱动、生成 ISO 或写入 U 盘/移动硬盘。
+- **系统与连接**：支持中英双语切换、Wi-Fi、蓝牙、音频、远程桌面及自动旋转屏幕。
+- **视障辅助版（`V4.0.3-VI`）**：基于 V4.0.3，默认英语与暗黑模式（纯黑壁纸+反色指针），内置 NVDA 读屏与系统提示音。
+- **应用转译**：`V0.0.x` 支持 x86，其余版本支持 x86 与 x64（需满足应用运行库依赖，不支持安装 x86 驱动）。
 
 ## 当前版本
 
-| 版本 | Windows 内核 | 更新日期 |
-| --- | --- | --- |
-| V0.0.2 | Windows 10 22H2 · 19045.3803 | 2026.10.30 |
-| V1.5.1 | Windows 11 23H2 · 22631.2861 | 2026.10.30 |
-| V3.0.2 | Windows 11 24H2 · 26100.1742 | 2026.10.30 |
-| V4.0.2 | Windows 11 26H1 · 28000.1450 | 2026.10.30 |
-
-每次更新都会更换壁纸，可借此区分版本。
-
-## 功能特性
-
-- 安装器：安装进系统、添加驱动、生成 ISO、写入 U 盘
-- 中英双语、Wi-Fi、蓝牙、远程桌面、自动旋转屏幕
-- 应用转译：V0.0.x 支持 x86，其余版本支持 x86 和 x64（不等于能安装跨架构驱动）
+| 版本 | Windows 内核 | 更新日期 | 应用转译 | 壁纸主题（用于区分版本） |
+| --- | --- | --- | --- | --- |
+| **V0.0.3** | Win10 22H2 · 19045.3803 | 2026.11.12 | x86 | 湖面雪山与秋日森林 |
+| **V1.5.2** | Win11 23H2 · 22631.2861 | 2026.11.12 | x86、x64 | 水面仰躺的海獭 |
+| **V3.0.3** | Win11 24H2 · 26100.1742 | 2026.11.12 | x86、x64 | 夕阳海浪、礁石与飞鸟 |
+| **V4.0.3** | Win11 26H1 · 28000.1450 | 2026.11.12 | x86、x64 | 俯瞰海岸沙滩与悬崖 |
+| **V4.0.3-VI** | Win11 26H1 · 28000.1450 | 2026.11.12 | x86、x64 | 纯黑背景 |
 
 ## 设备兼容性
 
-设备需已有完整的 Windows 启动支持，并与所选 PE 的架构、内核、固件和驱动匹配。
+设备需具备完整的 Windows 启动支持，且与所选 PE 的架构、内核、固件和驱动匹配。
 
-| 设备 | 建议版本 |
+| 平台 / 处理器 | 推荐 / 支持版本 |
 | --- | --- |
-| 骁龙 850 以前 | V0.0.2 |
-| 骁龙 850 至 8cx gen3 | 任意版本 |
-| 骁龙 X Elite | V3.0.2 或 V4.0.2 |
-| 骁龙 X2 Elite | V4.0.2 |
+| **早于骁龙 850** | 推荐 **V0.0.3** 或 **V1.5.2** |
+| **骁龙 850 至 8cx Gen 3** | **V0.0.3** – **V4.0.3-VI** |
+| **骁龙 X Elite** | **V3.0.3**（必选），**V4.0.3** / **V4.0.3-VI**（可用） |
+| **骁龙 X2 Elite、英伟达系列 CPU** | **V4.0.3** / **V4.0.3-VI**（必选） |
+| **Apple M 系列虚拟机** | 当前所有版本（**V0.0.3** – **V4.0.3-VI**） |
 
-启动蓝屏时，先用未添加非必要驱动的镜像排查，再补充匹配的驱动。国产 CPU 的运行信息仅为玩家反馈，仅供参考。
+- **英伟达电脑**：使用前必须按官网教程注入对应驱动（如 GB10 / DGX Spark 需安装 `nvgpio.inf.zip`）。
+- **国产处理器**（兆芯、海光、飞腾等）：前提是本身可启动 Windows，实机表现需以实测为准。
 
-## 安装与使用
+## 使用与排查
 
-只提供 ZIP，解压后用其中的安装器即可，不再单独提供 ISO。使用前请阅读使用须知并关闭杀毒软件；操作中请勿重启或强制关闭安装器，否则可能损坏系统引导和 PE 文件。
+仅提供 ZIP 压缩包，解压后运行内置安装器即可（不再单独提供 ISO）。使用前请阅读[官网](https://bydjpe.winos.me/)说明并核对校验值，操作中请勿重启或强制关闭安装器。
 
-ISO 无法启动时：核对校验值 → 确认版本、架构、启动方式和驱动匹配 → 若设备能运行 Windows，改用安装器。
+- **虚拟机 ISO 无法启动**：请附带虚拟机配置截图与物理机配置信息发邮件排查。
+- **物理机 U 盘启动失败**：若 Ventoy 等第三方工具无法引导，请改用自带安装器制作启动盘。
+- **注入驱动后蓝屏/卡死**：先仅保留硬盘、USB 及键鼠/触控板等基础驱动排查。
 
-## 反馈与支持
+## 支持、授权与免责声明
 
-- 邮箱：bydjpe.support@gmail.com
-- 第三方 QQ 群：687617870（非官方运营，内容不代表官方；需要支持请发邮件）
-
-反馈时请说明：设备型号、CPU、PE 版本、启动方式、具体现象。截图请勿暴露密码等敏感信息。
-
-## 二次修改与授权
-
-公开发布二次修改版前，请先取得授权（内部测试除外）。如发现未经授权的修改版，请停止使用，改从项目渠道获取。已授权作者：YLX。
-
-## 注意事项及免责声明
-
-- 请从可信渠道下载并核对校验值。
-- 操作前请备份数据，严格按说明操作，并对自己的操作及结果负责。
-- 微软官方安装介质请从微软官网获取。第三方资料及组件的版权归其权利人所有；Windows 的使用与授权以微软许可条款为准。
+- **反馈支持**：`bydjpe.support@gmail.com`（请附设备型号、CPU、PE 版本、启动方式及现象，勿暴露敏感信息）。*第三方 QQ 群 `687617870` 非官方运营。*
+- **二改与署名**：未经许可禁止公开发布二改版（内部测试除外）；公开视频、教程、测评须明确标注 **「BYDJ PE」**。已授权作者：**YLX**。
+- **免责声明**：请从官方渠道下载并核对校验值，操作前备份数据与引导。微软官方介质及 Windows 授权以微软条款为准。
